@@ -22,9 +22,8 @@ function TiptapEditor() {
         content: `<p>Hello, Tiptap with Tailwind!</p>`,
     })
 
-    if (!editor) {
+    if (!editor)
         return null
-    }
 
     const setLink = () => {
         const url = window.prompt('Enter URL')
@@ -95,4 +94,4 @@ function TiptapEditor() {
     )
 }
 
-export default TiptapEditor
+export default TiptapEditor;

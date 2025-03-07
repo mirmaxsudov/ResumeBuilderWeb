@@ -10,4 +10,13 @@ button {
 button.is-active {
   background-color: #333;
   color: #fff;
-}   
+}
+
+ul li,
+ul li {
+  list-style-type: disc;
+}
+
+a {
+  color: blue;
+}
