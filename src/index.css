@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  /* outline: 1px solid red; */
+}
+
 button {
   margin-right: 4px;
   padding: 4px 8px;
