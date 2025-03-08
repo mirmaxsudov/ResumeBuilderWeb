@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from './pages/HomePage';
 import HomeLayout from "./layout/HomeLayout";
 import ResumeTemplates from "./pages/ResumeTemplates";
+import Resume8 from "./components/resumes/Resume8";
+import ResumeBuilder from "./components/resumes/resumeBuilder/ResumeBuilder";
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
         <Route path="/" element={<HomeLayout />}>
           <Route index={true} element={<HomePage />} />
           <Route path="/resume-templates" element={<ResumeTemplates />} />
+          <Route path="/profile" element={<Resume8 />} />
         </Route>
+        <Route path="/resume-builder" element={<ResumeBuilder />} />
       </Routes>
     </BrowserRouter>
   )
