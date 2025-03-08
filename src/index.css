@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 * {
   /* outline: 1px solid red; */
 }
+
 
 button {
   margin-right: 4px;
@@ -23,4 +27,32 @@ ul li {
 
 a {
   color: blue;
+}
+.enji-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0 100px;
+}
+.enji-resume{
+  width: 794px;
+  background: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.enji-container{
+  /* width: 468px; */
+  width: 670px;
+  margin: 0 auto;
+}
+.enji-header{
+  background: url(./assets/images/header.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 44px 0 16px;
+  
+}
+
+strong{
+  color: #64748b;
 }
