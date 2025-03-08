@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        center: true, // Ensures the container is centered
+      },
+      maxWidth: {
+        "small": "1200px", // Define a custom max-width
+      },
+    },
   },
   plugins: [],
-}
+};

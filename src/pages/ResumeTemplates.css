@@ -1,0 +1,11 @@
+.resume-template-card .useBtn {
+  opacity: 0;
+}
+
+.resume-template-card:hover .useBtn {
+  opacity: 1;
+}
+
+.resume-template-card:hover .resume-image {
+  filter: blur(2px);
+}
