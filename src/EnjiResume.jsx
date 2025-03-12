@@ -3,9 +3,12 @@ import {
   Figma,
   Github,
   Globe,
+  Link,
   Linkedin,
   Mail,
   MapPin,
+  Sparkles,
+  Square,
 } from "lucide-react";
 import React from "react";
 
@@ -176,11 +179,13 @@ const EnjiResume = () => {
     },
   };
 
-
   return (
     <div className="bg-white enji-resume">
       <div className="enji-header flex flex-col items-center ">
-        <h2 className="text-3xl font-extrabold text-slate-700"> {data.info.firstName} {data.info.lastName} </h2>
+        <h2 className="text-3xl font-extrabold text-slate-700">
+          {" "}
+          {data.info.firstName} {data.info.lastName}{" "}
+        </h2>
         <h4 className="text-[13px] text-slate-500 font-medium leading-[20px]">
           {data.info.title}
         </h4>
@@ -215,40 +220,189 @@ const EnjiResume = () => {
           <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
             Education
           </h4>
-          <p className="flex items-center text-[14px] text-slate-700 col-span-12 md:col-span-6 ">
-            <span className=" font-semibold block text-sm text-slate-600">
-              {data.education.educations[0].name}
-            </span>
-            — {data.education.educations[0].degree}
-          </p>
-          <p className="flex col-span-12 md:col-span-3 gap-1 text-gray-600 text-[10px] font-medium">
-            <CalendarDays className="w-3 h-3" />{data.education.educations[0].startDate} - {data.education.educations[0].endDate}
-          </p>
+          <div className="col-span-9 grid grid-cols-12">
+            <p className="flex items-center text-[14px] text-slate-700 col-span-8 ">
+              <span className=" font-semibold block text-sm text-slate-600">
+                {data.education.educations[0].name}
+              </span>
+              — {data.education.educations[0].degree}
+            </p>
+            <p className="flex col-span-4 gap-1 text-gray-600 text-[10px] font-medium">
+              <CalendarDays className="w-3 h-3" />
+              {data.education.educations[0].startDate} -{" "}
+              {data.education.educations[0].endDate}
+            </p>
+          </div>
         </div>
         <hr />
-        <div className="grid grid-cols-12 gap-4 items-center pt-4 pb-2">
+        <div className="grid grid-cols-12 gap-4 pt-4 pb-2">
           <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
-          {data.experience.title}
+            {data.experience.title}
           </h4>
-          <p className="flex items-center text-[14px] text-slate-700 col-span-12 md:col-span-6 ">
-            <span className=" font-semibold block text-sm text-slate-600">
-            {data.experience.jobs[0].company}
-            </span>
-            —  {data.experience.jobs[0].title}
-          </p>
-          <p className="flex col-span-12 md:col-span-3 gap-1 text-gray-600 text-[10px] font-medium">
-            <CalendarDays className="w-3 h-3" />{data.education.educations[0].startDate} - {data.education.educations[0].endDate}
-          </p>
+          <div className="col-span-9 grid grid-cols-12 items-center">
+            <p className="flex items-center text-[14px] text-slate-700 md:col-span-8 ">
+              <span className=" font-semibold block text-sm text-slate-600">
+                {data.experience.jobs[0].company}
+              </span>
+              — {data.experience.jobs[0].title}
+            </p>
+            <p className="flex col-span-4 gap-1 text-gray-600 text-[10px] font-medium">
+              <CalendarDays className="w-3 h-3" />
+              {data.education.educations[0].startDate} -{" "}
+              {data.education.educations[0].endDate}
+            </p>
+            <div className="flex items-center gap-1 col-span-12 mt-2">
+              {data.experience.jobs[0].technologies.map((item) => {
+                return (
+                  <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                    {item.name}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
+              <Square className="w-2 h-2 text-slate-400" />
+              Improving the UI & UX of Femicam's desktop application based on
+              React Electron
+            </p>
+            <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
+              <Square className="w-2 h-2 text-slate-400" />
+              Designing and creating React components for the application
+              dashboard
+            </p>
+            <p className="flex items-center text-[14px] text-slate-700 col-span-8 mt-2">
+              <span className=" font-semibold block text-sm text-slate-600">
+                Ciptaloka.com
+              </span>
+              — {data.experience.jobs[0].title}
+            </p>
+            <p className="flex col-span-4 gap-1 text-gray-600 text-[10px] font-medium">
+              <CalendarDays className="w-3 h-3" />
+              {data.education.educations[0].startDate} -{" "}
+              {data.education.educations[0].endDate}
+            </p>
+            <div className="flex items-center gap-1 col-span-12 mt-2">
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                Tailwind Css
+              </button>
+            </div>
+            <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
+              <Square className="w-2 h-2 text-slate-400" />
+              Created main site navigation (mega-menu, mobile drawer) using
+              Tailwind CSS
+            </p>
+            <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
+              <Square className="w-2 h-2 text-slate-400" />
+              Revamped shopping cart & checkout pages (~18 pages in total)
+            </p>
+          </div>
         </div>
-        <div className="grid grid-cols-12 gap-4 items-center pb-4">
-          <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
-          </h4>
-          <div className="flex items-center gap-1 md:col-span-9 ">
-            {
-                data.experience.jobs[0].technologies.map((item)=>{
-                    return <button className="bg-gray-100 text-slate-500 rounded-lg text-[12px] font-medium">{item.name}</button>
-                })
-            }
+
+        <hr />
+        <div className="grid grid-cols-12 items-start mt-4">
+          <div className="col-span-3">
+            <h4 className="text-[14px] text-slate-700 font-semibold">
+              Featured Project
+            </h4>
+          </div>
+          <div className="col-span-9 grid grid-cols-12">
+            <div className="col-span-12">
+              <p className="flex items-center text-[14px] text-slate-700 col-span-12 md:col-span-6 ">
+                <span className=" font-semibold block text-sm text-slate-600">
+                  SPKJS
+                </span>
+              </p>
+            </div>
+
+            <div className="col-span-12 mt-2">
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                React
+              </button>
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                Chakra UI
+              </button>
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                Express
+              </button>
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                MongoDB
+              </button>
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                Redis
+              </button>
+            </div>
+            <div className="col-span-12">
+              <p className="text-[12px] text-slate-800 mt-1">
+                SPKJS (Sistem Pendeteksi Kemiripan Judul Skripsi) is an
+                application to early detect thesis titles plagiarism using the
+                Jaro Winkler algorithm. More details at{" "}
+                <span className="flex items-center">
+                  <Link className="w-4 h-4" />
+                  github.com/enjidev/spkjs
+                </span>
+              </p>
+            </div>
+
+            <div className="col-span-12 flex my-[10px]">
+              <Sparkles className="w-4 h-4" />
+              <p className="text-[12px] text-slate-800 flex">
+                see all of my projects on my portfolio:
+                <span className="flex items-center">
+                  <Link className="w-4 h-4" />
+                  github.com/enjidev/spkjs
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div className="grid grid-cols-12 items-start mt-4">
+          <div className="col-span-3">
+            <h4 className="text-[14px] text-slate-700 font-semibold">
+              Skills & Tools
+            </h4>
+          </div>
+          <div className="col-span-9 grid grid-cols-12">
+            <div className="col-span-4">
+              <p className="text-[12px] text-slate-500">Underline indicators</p>
+            </div>
+            <div className="col-span-8">
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                Frequently Used
+              </button>
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                Occasionally
+              </button>
+            </div>
+            <div className="col-span-12">
+              <h4 className="text-[14px] text-slate-700 font-semibold">
+                Languages
+              </h4>
+            </div>
+            <div className="col-span-4">
+              <p className="text-[12px] text-slate-500">FE related</p>
+            </div>
+            <div className="col-span-8">
+              {data.skills.ver1.subs.map((item) => (
+                <button
+                  key={item.title}
+                  className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0"
+                >
+                  {item.title}
+                </button>
+              ))}
+            </div>
+            <div className="col-span-4">
+              <p className="text-[12px] text-slate-500">BE related</p>
+            </div>
+            <div className="col-span-8 mb-3">
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                PHP
+              </button>
+              <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                SQL
+              </button>
+            </div>
           </div>
         </div>
         <hr />

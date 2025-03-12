@@ -14,16 +14,17 @@ import ResumeBuilder from "./components/resumes/resumeBuilder/ResumeBuilder";
 function App() {
   return (
 
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomeLayout />}>
-          <Route index={true} element={<HomePage />} />
-          <Route path="/resume-templates" element={<ResumeTemplates />} />
-          <Route path="/profile" element={<Resume8 />} />
-        </Route>
-        <Route path="/resume-builder" element={<ResumeBuilder />} />
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<HomeLayout />}>
+    //       <Route index={true} element={<HomePage />} />
+    //       <Route path="/resume-templates" element={<ResumeTemplates />} />
+    //       <Route path="/profile" element={<Resume8 />} />
+    //     </Route>
+    //     <Route path="/resume-builder" element={<ResumeBuilder />} />
+    //   </Routes>
+    // </BrowserRouter>
+    <EnjiResume/>
   )
 }
 

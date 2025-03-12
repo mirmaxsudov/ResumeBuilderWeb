@@ -4,7 +4,6 @@
 * {
   /* outline: 1px solid red; */
 }
-
 button {
   margin-right: 4px;
   padding: 4px 8px;
@@ -13,6 +12,7 @@ button {
 button.is-active {
   background-color: #333;
   color: #fff;
+  /* color:   #334155; */
 }
 
 ul li,
@@ -38,6 +38,7 @@ a {
   /* width: 468px; */
   width: 670px;
   margin: 0 auto;
+  padding-bottom: 58px;
 }
 .enji-header {
   background: url(./assets/images/header.png);
