@@ -7,7 +7,7 @@
 button {
   margin-right: 4px;
   padding: 4px 8px;
-}
+} 
 
 button.is-active {
   background-color: #333;
