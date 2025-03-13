@@ -1,4 +1,5 @@
-import { CalendarDays, Figma, Github, Globe, Linkedin, Mail, MapPin } from "lucide-react";
+import React from 'react'
+import "./Resume8.css"
 
 const Resume8 = () => {
     const data = {
@@ -19,6 +20,11 @@ const Resume8 = () => {
                     id: 1,
                     label: "Github",
                     url: "https://github.com/kimdir",
+                },
+                {
+                    id: 1,
+                    label: "LinkedIn",
+                    url: "https://linkedin.com/kimdir",
                 }
             ]
         },
@@ -195,84 +201,50 @@ const Resume8 = () => {
         }
     }
 
-    return (<>
-        <div className="bg-white enji-resume">
-            <div className="enji-header flex flex-col items-center ">
-                <h2 className="text-3xl font-extrabold text-slate-700"> {data.info.firstName} {data.info.lastName} </h2>
-                <h4 className="text-[13px] text-slate-500 font-medium leading-[20px]">
-                    {data.info.title}
-                </h4>
-                <div className="flex gap-2 pt-4 pb-2">
-                    <p className="flex items-center gap-[2px] text-[12px] text-slate-800">
-                        <MapPin className="v-4 h-4" />
-                        {data.info.address}
-                    </p>
-                    <p className="flex items-center gap-[2px] text-[12px] text-slate-800">
-                        <Mail className="v-4 h-4" />
-                        {data.info.email}
-                    </p>
-                </div>
-                <div className="flex gap-1">
-                    <button className="flex font-semibold border bg-purple-100 border-purple-600 text-purple-600 rounded-full px-2 py-1 items-center text-[12px]">
-                        <Globe className="v-4 h-4" /> enji.dev
-                    </button>
-                    <button className="flex font-semibold border bg-blue-100 border-blue-600 text-blue-600 rounded-full px-2 py-1 items-center text-[12px]">
-                        <Linkedin className="v-4 h-4" /> /enjidev
-                    </button>
-                    <button className="flex font-semibold border bg-orange-100 border-orange-600 text-orange-600 rounded-full px-2 py-1 items-center text-[12px]">
-                        <Figma className="v-4 h-4" /> /@enjidev
-                    </button>
-                    <button className="flex font-semibold border bg-gray-200 border-black text-black rounded-full px-2 py-1 items-center text-[12px]">
-                        <Github className="v-4 h-4" /> /enjidev
-                    </button>
-                </div>
-            </div>
-            <hr />
-            <div className="enji-container">
-                <div className="grid grid-cols-12 gap-4 items-center pt-8 pb-4">
-                    <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
-                        Education
-                    </h4>
-                    <p className="flex items-center text-[14px] text-slate-700 col-span-12 md:col-span-6 ">
-                        <span className=" font-semibold block text-sm text-slate-600">
-                            {data.education.educations[0].name}
-                        </span>
-                        — {data.education.educations[0].degree}
-                    </p>
-                    <p className="flex col-span-12 md:col-span-3 gap-1 text-gray-600 text-[10px] font-medium">
-                        <CalendarDays className="w-3 h-3" />{data.education.educations[0].startDate} - {data.education.educations[0].endDate}
-                    </p>
-                </div>
-                <hr />
-                <div className="grid grid-cols-12 gap-4 items-center pt-4 pb-2">
-                    <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
-                        {data.experience.title}
-                    </h4>
-                    <p className="flex items-center text-[14px] text-slate-700 col-span-12 md:col-span-6 ">
-                        <span className=" font-semibold block text-sm text-slate-600">
-                            {data.experience.jobs[0].company}
-                        </span>
-                        —  {data.experience.jobs[0].title}
-                    </p>
-                    <p className="flex col-span-12 md:col-span-3 gap-1 text-gray-600 text-[10px] font-medium">
-                        <CalendarDays className="w-3 h-3" />{data.education.educations[0].startDate} - {data.education.educations[0].endDate}
-                    </p>
-                </div>
-                <div className="grid grid-cols-12 gap-4 items-center pb-4">
-                    <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
-                    </h4>
-                    <div className="flex items-center gap-1 md:col-span-9 ">
-                        {
-                            data.experience.jobs[0].technologies.map((item) => {
-                                return <button className="bg-gray-100 text-slate-500 rounded-lg text-[12px] font-medium">{item.name}</button>
-                            })
-                        }
+    console.log(data);
+
+    return (
+        <div className='resume w-[794px] min-h-[1123px] mx-auto p-[45px] bg-[#fff] border relative'>
+            <div>
+                <div className='top flex justify-between'>
+                    <div className='socials'>
+                        <div className="flex z-50 items-center divide-x-2 divide-gray-400">
+                            {data.info.socials.map((social, i) => (
+                                <a
+                                    key={social.url}
+                                    className={`text-black text-[14px] px-[15px] ${i === 0 ? 'pl-0' : ''}`}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {social.label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="info text-end text-[#0000007d] text-[14px]">
+                        <p>
+                            {data.info.address}
+                        </p>
+                        <p>
+                            {data.info.email}
+                        </p>
+                        <p>
+                            {data.info.phone}
+                        </p>
                     </div>
                 </div>
-                <hr />
+                <h1 className='text-[60px] font-semibold tracking-wide'>
+                    {data.info.firstName + ' ' + data.info.lastName}
+                </h1>
+            </div>
+            <div className='bg-icon bg-icon-1 rounded-full bg-[#FF90C3] absolute z-50'></div>
+            <div className='bg-icon bg-icon-2 rounded-full bg-[#32EF96] absolute z-40'></div>
+            <div className='bg-icon bg-icon-3 rounded-full bg-[#8AE9FB] absolute z-30'></div>
+            <div>
             </div>
         </div>
-    </>);
-};
+    )
+}
 
 export default Resume8;
