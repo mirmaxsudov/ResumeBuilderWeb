@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import React from "react";
 
-const EnjiResume = () => {
+const EnjiBlackResume = () => {
   const data = {
     image: {
       id: 1,
@@ -181,21 +181,21 @@ const EnjiResume = () => {
 
   return (
     <div className="enji-resume--wrapper">
-      <div className="bg-white enji-resume">
-        <div className="enji-header flex flex-col items-center ">
-          <h2 className="text-3xl font-extrabold text-slate-700">
+      <div className="bg-[#0f172a] text-white enji-resume ">
+        <div className="enji-black--header flex flex-col items-center ">
+          <h2 className="text-3xl font-extrabold text-white">
             {" "}
             {data.info.firstName} {data.info.lastName}{" "}
           </h2>
-          <h4 className="text-[13px] text-slate-500 font-medium leading-[20px]">
+          <h4 className="text-[13px] text-[#E2E8F0] font-medium leading-[20px]">
             {data.info.title}
           </h4>
           <div className="flex gap-2 pt-4 pb-2">
-            <p className="flex items-center gap-[2px] text-[12px] text-slate-800">
+            <p className="flex items-center gap-[2px] text-[12px] text-[#E2E8F0]">
               <MapPin className="v-4 h-4" />
               {data.info.address}
             </p>
-            <p className="flex items-center gap-[2px] text-[12px] text-slate-800">
+            <p className="flex items-center gap-[2px] text-[12px] text-[#E2E8F0]">
               <Mail className="v-4 h-4" />
               {data.info.email}
             </p>
@@ -215,15 +215,15 @@ const EnjiResume = () => {
             </button>
           </div>
         </div>
-        <hr />
+        <div className="w-full bg-slate-700 h-[1px]"></div>
         <div className="enji-container">
           <div className="grid grid-cols-12 gap-4 items-center pt-8 pb-4">
-            <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
+            <h4 className="text-[14px] text-[#E2E8F0] col-span-3 font-semibold">
               Education
             </h4>
             <div className="col-span-9 grid grid-cols-12">
-              <p className="flex items-center text-[14px] text-slate-700 col-span-8 ">
-                <span className=" font-semibold block text-sm text-slate-600">
+              <p className="flex items-center text-[14px] text-[#E2E8F0] col-span-8 ">
+                <span className=" font-semibold block text-sm text-[#E2E8F0]">
                   {data.education.educations[0].name}
                 </span>
                 — {data.education.educations[0].degree}
@@ -235,14 +235,14 @@ const EnjiResume = () => {
               </p>
             </div>
           </div>
-          <hr />
+          <div className="w-full bg-slate-700 h-[1px]"></div>
           <div className="grid grid-cols-12 gap-4 pt-4 pb-2">
-            <h4 className="text-[14px] text-slate-700 col-span-12 md:col-span-3 font-semibold">
+            <h4 className="text-[14px] text-[#E2E8F0] col-span-12 md:col-span-3 font-semibold">
               {data.experience.title}
             </h4>
             <div className="col-span-9 grid grid-cols-12 items-center">
-              <p className="flex items-center text-[14px] text-slate-700 md:col-span-8 ">
-                <span className=" font-semibold block text-sm text-slate-600">
+              <p className="flex items-center text-[14px] text-[#E2E8F0] md:col-span-8 ">
+                <span className=" font-semibold block text-sm text-[#E2E8F0]">
                   {data.experience.jobs[0].company}
                 </span>
                 — {data.experience.jobs[0].title}
@@ -255,24 +255,24 @@ const EnjiResume = () => {
               <div className="flex items-center gap-1 col-span-12 mt-2">
                 {data.experience.jobs[0].technologies.map((item) => {
                   return (
-                    <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                    <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                       {item.name}
                     </button>
                   );
                 })}
               </div>
-              <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
-                <Square className="w-2 h-2 text-slate-400" />
+              <p className="col-span-12 text-[12px] text-[#E2E8F0] flex items-center gap-1 mt-1">
+                <Square className="w-2 h-2" />
                 Improving the UI & UX of Femicam's desktop application based on
                 React Electron
               </p>
-              <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
-                <Square className="w-2 h-2 text-slate-400" />
+              <p className="col-span-12 text-[12px] text-[#E2E8F0] flex items-center gap-1 mt-1">
+                <Square className="w-2 h-2" />
                 Designing and creating React components for the application
                 dashboard
               </p>
-              <p className="flex items-center text-[14px] text-slate-700 col-span-8 mt-2">
-                <span className=" font-semibold block text-sm text-slate-600">
+              <p className="flex items-center text-[14px] text-[#E2E8F0] col-span-8 mt-2">
+                <span className=" font-semibold block text-sm text-[#E2E8F0]">
                   Ciptaloka.com
                 </span>
                 — {data.experience.jobs[0].title}
@@ -283,57 +283,57 @@ const EnjiResume = () => {
                 {data.education.educations[0].endDate}
               </p>
               <div className="flex items-center gap-1 col-span-12 mt-2">
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   Tailwind Css
                 </button>
               </div>
-              <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
-                <Square className="w-2 h-2 text-slate-400" />
+              <p className="col-span-12 text-[12px] text-[#E2E8F0] flex items-center gap-1 mt-1">
+                <Square className="w-2 h-2 text-[#E2E8F0]" />
                 Created main site navigation (mega-menu, mobile drawer) using
                 Tailwind CSS
               </p>
-              <p className="col-span-12 text-[12px] text-slate-800 flex items-center gap-1 mt-1">
-                <Square className="w-2 h-2 text-slate-400" />
+              <p className="col-span-12 text-[12px] text-[#E2E8F0] flex items-center gap-1 mt-1">
+                <Square className="w-2 h-2 " />
                 Revamped shopping cart & checkout pages (~18 pages in total)
               </p>
             </div>
           </div>
 
-          <hr />
+          <div className="w-full bg-slate-700 h-[1px]"></div>
           <div className="grid grid-cols-12 items-start mt-4">
             <div className="col-span-3">
-              <h4 className="text-[14px] text-slate-700 font-semibold">
+              <h4 className="text-[14px] text-[#E2E8F0] font-semibold">
                 Featured Project
               </h4>
             </div>
             <div className="col-span-9 grid grid-cols-12">
               <div className="col-span-12">
-                <p className="flex items-center text-[14px] text-slate-700 col-span-12 md:col-span-6 ">
-                  <span className=" font-semibold block text-sm text-slate-600">
+                <p className="flex items-center text-[14px] text-[#E2E8F0] col-span-12 md:col-span-6 ">
+                  <span className=" font-semibold block text-sm text-[#E2E8F0]">
                     SPKJS
                   </span>
                 </p>
               </div>
 
               <div className="col-span-12 mt-2">
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   React
                 </button>
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   Chakra UI
                 </button>
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   Express
                 </button>
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   MongoDB
                 </button>
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   Redis
                 </button>
               </div>
               <div className="col-span-12">
-                <p className="text-[12px] text-slate-800 mt-1">
+                <p className="text-[12px] text-[#E2E8F0] mt-1">
                   SPKJS (Sistem Pendeteksi Kemiripan Judul Skripsi) is an
                   application to early detect thesis titles plagiarism using the
                   Jaro Winkler algorithm. More details at{" "}
@@ -346,7 +346,7 @@ const EnjiResume = () => {
 
               <div className="col-span-12 flex my-[10px]">
                 <Sparkles className="w-4 h-4" />
-                <p className="text-[12px] text-slate-800 flex">
+                <p className="text-[12px] text-[#E2E8F0] flex">
                   see all of my projects on my portfolio:
                   <span className="flex items-center">
                     <Link className="w-4 h-4" />
@@ -356,10 +356,10 @@ const EnjiResume = () => {
               </div>
             </div>
           </div>
-          <hr />
+          <div className="w-full bg-slate-700 h-[1px]"></div>
           <div className="grid grid-cols-12 items-start mt-4">
             <div className="col-span-3">
-              <h4 className="text-[14px] text-slate-700 font-semibold">
+              <h4 className="text-[14px] text-[#E2E8F0] font-semibold">
                 Skills & Tools
               </h4>
             </div>
@@ -370,15 +370,15 @@ const EnjiResume = () => {
                 </p>
               </div>
               <div className="col-span-8">
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   Frequently Used
                 </button>
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   Occasionally
                 </button>
               </div>
               <div className="col-span-12">
-                <h4 className="text-[14px] text-slate-700 font-semibold">
+                <h4 className="text-[14px] text-[#E2E8F0] font-semibold">
                   Languages
                 </h4>
               </div>
@@ -389,7 +389,7 @@ const EnjiResume = () => {
                 {data.skills.ver1.subs.map((item) => (
                   <button
                     key={item.title}
-                    className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0"
+                    className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0"
                   >
                     {item.title}
                   </button>
@@ -399,20 +399,20 @@ const EnjiResume = () => {
                 <p className="text-[12px] text-slate-500">BE related</p>
               </div>
               <div className="col-span-8 mb-3">
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   PHP
                 </button>
-                <button className="bg-gray-100 text-slate-500 rounded-md text-[12px] font-medium py-0">
+                <button className="bg-slate-700 text-slate-300 rounded-md text-[12px] font-medium py-0">
                   SQL
                 </button>
               </div>
             </div>
           </div>
-          <hr />
+          <div className="w-full bg-slate-700 h-[1px]"></div>
         </div>
       </div>
     </div>
   );
 };
 
-export default EnjiResume;
+export default EnjiBlackResume;

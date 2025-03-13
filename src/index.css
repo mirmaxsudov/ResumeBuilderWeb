@@ -12,7 +12,7 @@ button {
 button.is-active {
   background-color: #333;
   color: #fff;
-  /* color:   #334155; */
+  /* color:   #0f172a; */
 }
 
 ul li,
@@ -29,9 +29,13 @@ a {
   justify-content: center;
   margin: 100px 0 100px;
 }
+.enji-resume--wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .enji-resume {
   width: 794px;
-  background: #fff;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 .enji-container {
@@ -42,6 +46,13 @@ a {
 }
 .enji-header {
   background: url(./assets/images/header.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 44px 0 16px;
+}
+.enji-black--header{
+  background: url(./assets/images/headerblack.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
