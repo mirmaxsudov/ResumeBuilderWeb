@@ -1,19 +1,15 @@
-
 import React from "react";
 import TiptapEditor from "./Editor";
-import EnjiResume from "./EnjiResume";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from './pages/HomePage';
+import HomePage from "./pages/HomePage";
 import HomeLayout from "./layout/HomeLayout";
 import ResumeTemplates from "./pages/ResumeTemplates";
 import Resume8 from "./components/resumes/Resume8";
 import ResumeBuilder from "./components/resumes/resumeBuilder/ResumeBuilder";
 
-
 function App() {
   return (
-
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeLayout />}>
@@ -24,11 +20,10 @@ function App() {
         <Route path="/resume-builder" element={<ResumeBuilder />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
-
 
 // const data = {
 //   image: {
