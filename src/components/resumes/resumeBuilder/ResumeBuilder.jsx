@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import EnjiBlackResume from '../../../EnjiBlackResume';
 import EnjiResume from '../../../EnjiResume';
+import Resume6 from './../Resume6';
 
 export default function ResumeBuilder() {
     const [formData, setFormData] = useState({
@@ -64,7 +65,7 @@ export default function ResumeBuilder() {
             <div style={{ flexBasis: `${100 - leftWidth}%` }} className="p-6 bg-[#656E83] border-l border-gray-300 h-screen max-h-screen overflow-auto">
                 <h2 className="text-2xl font-bold mb-4">Preview</h2>
                 <div className='shadow-2xl'>
-                    <EnjiBlackResume />
+                    <Resume6 />
                 </div>
             </div>
         </div>
