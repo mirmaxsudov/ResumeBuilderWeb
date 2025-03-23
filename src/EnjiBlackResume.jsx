@@ -10,22 +10,22 @@ import {
   Sparkles,
   Square,
 } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 const EnjiBlackResume = () => {
-  const data = {
+  const [data] = useState({
     image: {
       id: 1,
       isExists: true,
       url: "some url",
     },
     info: {
-      firstName: "Kimdir",
-      lastName: "Kimdirov",
+      firstName: "Abdurahmon",
+      lastName: "Mirmaxsudov",
       title: "Frontend developer",
       address: "Tashkent, Uzbekistan",
-      phone: "+998901234567",
-      email: "yTq4W@example.com",
+      phone: "+998997922950",
+      email: "abdurahmonmirmaxsudov2804@gmail.com",
       socials: [
         {
           id: 1,
@@ -177,7 +177,7 @@ const EnjiBlackResume = () => {
         },
       ],
     },
-  };
+  })
 
   return (
     <div className="enji-resume--wrapper">

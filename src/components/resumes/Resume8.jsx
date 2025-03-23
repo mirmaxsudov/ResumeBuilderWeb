@@ -241,8 +241,6 @@ const Resume8 = () => {
             <div className='bg-icon bg-icon-1 rounded-full bg-[#FF90C3] absolute z-50'></div>
             <div className='bg-icon bg-icon-2 rounded-full bg-[#32EF96] absolute z-40'></div>
             <div className='bg-icon bg-icon-3 rounded-full bg-[#8AE9FB] absolute z-30'></div>
-            <div>
-            </div>
         </div>
     )
 }
