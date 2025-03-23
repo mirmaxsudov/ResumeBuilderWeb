@@ -9,6 +9,7 @@ import Resume8 from "./components/resumes/Resume8";
 import ResumeBuilder from "./components/resumes/resumeBuilder/ResumeBuilder";
 import EnjiBlackResume from "./EnjiBlackResume";
 import EnjiResume from './EnjiResume';
+import Resume6 from "./components/resumes/Resume6";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route index={true} element={<HomePage />} />
           <Route path="/resume-templates" element={<ResumeTemplates />} />
           <Route path="/profile" element={<EnjiBlackResume />} />
+          <Route path="resume6" element={<Resume6 />} />
         </Route>
         <Route path="/resume-builder" element={<ResumeBuilder />} />
       </Routes>
