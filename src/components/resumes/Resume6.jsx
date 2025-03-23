@@ -202,7 +202,7 @@ const Resume6 = () => {
             </h1>
             <p className="text-2xl  ml-2 font-bold text-[#000000]">{data.info.title}</p>
             </div>
-            <div className="w-[500px] mt-[8px]">
+            <div className="mt-[8px]">
             <p className="text-[#000000] font-normal text-[20px] max-w-xl ">
             {data.profile.text}
             </p>
