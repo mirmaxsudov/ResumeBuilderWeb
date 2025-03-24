@@ -212,7 +212,7 @@ const Resume6 = () => {
 
         
 
-        {/* EXPERIENCE */}
+        {/* experince */}
         <div className="grid grid-cols-[208px_1fr] gap-4 mb-6 mt-[30px]">
           <h2 className="text-[#00000080] font-[600] text-xl">
             {data.experience.title}
