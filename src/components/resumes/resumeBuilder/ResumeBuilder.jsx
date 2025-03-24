@@ -1,6 +1,4 @@
 import React, { useState, useRef } from 'react';
-import EnjiBlackResume from '../../../EnjiBlackResume';
-import EnjiResume from '../../../EnjiResume';
 import Resume6 from './../Resume6';
 
 export default function ResumeBuilder() {
