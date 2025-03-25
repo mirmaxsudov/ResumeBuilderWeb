@@ -11,6 +11,9 @@ import EnjiBlackResume from "./EnjiBlackResume";
 import EnjiResume from './EnjiResume';
 import Resume6 from "./components/resumes/Resume6";
 import Resume1 from "./components/resumes/Resume1";
+import Resume2 from "./components/resumes/Resume2";
+import Resume3 from "./components/resumes/Resume3";
+import Resume4 from "./components/resumes/Resume4";
 
 function App() {
   const data = {
@@ -194,7 +197,7 @@ function App() {
           <Route path="/resume-templates" element={<ResumeTemplates />} />
           <Route path="/profile" element={<EnjiBlackResume />} />
           <Route path="resume6" element={<Resume6 />} />
-          <Route path="/resume1" element={<Resume1 data={data} />} />
+          <Route path="/resume4" element={<Resume3 data={data} />} />
 
         </Route>
         <Route path="/resume-builder" element={<ResumeBuilder />} />
