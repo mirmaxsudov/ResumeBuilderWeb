@@ -15,6 +15,9 @@ export default function ResumeBuilder() {
     const isResizingRef = useRef(false);
 
     const handleChange = (e) => {
+        console.log('====================================');
+        console.log(e);
+        console.log('====================================');
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
