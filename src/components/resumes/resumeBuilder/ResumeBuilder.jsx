@@ -1,54 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {
-    Document,
-    Page,
-    Text,
-    View,
-    StyleSheet,
-    usePDF,
-    Font, // <-- import Font
-} from '@react-pdf/renderer';
-
-// 1) Register the .ttf font with 'truetype' format
-Font.register({
-    family: 'NotoSans',
-    src: 'https://fonts.gstatic.com/s/notosans/v27/o-0IIpQlx3QUlC5A4PNr4w.ttf',
-    format: 'truetype',
-});
-
-const pdfStyles = StyleSheet.create({
-    page: {
-        padding: 30,
-        fontSize: 12,
-        flexDirection: 'column',
-        fontFamily: 'NotoSans', // <-- apply the font
-    },
-    title: {
-        fontSize: 18,
-        marginBottom: 10,
-    },
-    textRow: {
-        marginBottom: 5,
-    },
-});
-
-function MyDocument({ data }) {
-    return (
-        <Document>
-            <Page size="A4" style={pdfStyles.page}>
-                <View>
-                    <Text style={pdfStyles.title}>
-                        {data.firstName} {data.lastName}
-                    </Text>
-                    <Text style={pdfStyles.textRow}>{data.jobTitle}</Text>
-                    <Text style={pdfStyles.textRow}>Email: {data.email}</Text>
-                    <Text style={pdfStyles.textRow}>Phone: {data.phone}</Text>
-                    <Text style={pdfStyles.textRow}>Location: {data.location}</Text>
-                </View>
-            </Page>
-        </Document>
-    );
-}
+import React, { useState, useRef } from 'react';
+import Resume6 from './../Resume6';
 
 export default function ResumeBuilder() {
     const [formData, setFormData] = useState({
@@ -59,39 +10,42 @@ export default function ResumeBuilder() {
         phone: '',
         location: '',
     });
-
-    const [debouncedData, setDebouncedData] = useState(formData);
-
-    // Debounce
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setDebouncedData(formData);
-        }, 400);
-        return () => clearTimeout(timer);
-    }, [formData]);
-
-    // Generate PDF from MyDocument
-    const [instance] = usePDF({
-        document: <MyDocument data={debouncedData} />,
-    });
-
-    const [pdfUrl, setPdfUrl] = useState(null);
-
-    // Update pdfUrl once PDF is ready
-    useEffect(() => {
-        if (!instance.loading && !instance.error && instance.url) {
-            setPdfUrl(instance.url);
-        }
-    }, [instance]);
+    const containerRef = useRef(null);
+    const [leftWidth, setLeftWidth] = useState(50);
+    const isResizingRef = useRef(false);
 
     const handleChange = (e) => {
+        console.log('====================================');
+        console.log(e);
+        console.log('====================================');
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    const handleMouseDown = () => {
+        isResizingRef.current = true;
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isResizingRef.current || !containerRef.current) return;
+        const containerRect = containerRef.current.getBoundingClientRect();
+        let newLeftWidth = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+        if (newLeftWidth < 10) newLeftWidth = 10;
+        if (newLeftWidth > 90) newLeftWidth = 90;
+        setLeftWidth(newLeftWidth);
+    };
+
+    const handleMouseUp = () => {
+        isResizingRef.current = false;
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+    };
+
     return (
-        <div className="flex h-screen">
-            <div className="w-1/2 p-6 overflow-auto">
+        <div ref={containerRef} className="flex h-screen">
+            <div style={{ flexBasis: `${leftWidth}%` }} className="p-6 overflow-auto">
                 <h2 className="text-2xl font-bold mb-4">Personal Details</h2>
                 <div className="mb-4">
                     <label className="block text-sm font-medium mb-1">Email</label>
@@ -105,9 +59,15 @@ export default function ResumeBuilder() {
                     />
                 </div>
             </div>
-
-            <div className="w-1/2 p-6 bg-gray-100 border-l border-gray-300">
+            <div
+                className="bg-gray-300 w-1 h-full cursor-ew-resize"
+                onMouseDown={handleMouseDown}
+            ></div>
+            <div style={{ flexBasis: `${100 - leftWidth}%` }} className="p-6 bg-[#656E83] border-l border-gray-300 h-screen max-h-screen overflow-auto">
                 <h2 className="text-2xl font-bold mb-4">Preview</h2>
+                <div className='shadow-2xl'>
+                    <Resume6 />
+                </div>
             </div>
         </div>
     );

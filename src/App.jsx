@@ -10,9 +10,185 @@ import ResumeTemplates from "./pages/ResumeTemplates";
 import Resume8 from "./components/resumes/Resume8";
 import ResumeBuilder from "./components/resumes/resumeBuilder/ResumeBuilder";
 import Register from "./pages/auth/Register";
-
+import EnjiBlackResume from "./EnjiBlackResume";
+import EnjiResume from './EnjiResume';
+import Resume6 from "./components/resumes/Resume6";
+import Resume1 from "./components/resumes/Resume1";
 
 function App() {
+  const data = {
+    image: {
+      id: 1,
+      isExists: true,
+      url: null
+    },
+    info: {
+      firstName: "Rick",
+      lastName: "Tang",
+      title: "Product Designer",
+      address: "San Francisco, California", 
+      phone: "(315) 802-8179",
+      email: "ricktang@gmail.com",
+      socials: [
+        {
+          id: 1,
+          label: "LinkedIn",
+          url: "https://linkedin.com/in/ricktang"
+        },
+        {
+          id: 2,
+          label: "Dribbble",
+          url: "https://dribbble.com/ricktang"
+        },
+        {
+          id: 3,
+          label: "Behance",
+          url: "https://www.behance.net/ricktang"
+        }
+      ]
+    },
+    profile: {
+      title: "Profile",
+      text: "UX/UI specialist focused on designing clean and functional projects across all platforms and devices in response to specific briefs and problems, while always maintaining a unique look and feel."
+    },
+    experience: {
+      title: "Experience",
+      count: 4,
+      jobs: [
+        {
+          id: 1,
+          title: "Product Designer",
+          company: "Uber",
+          city: "San Francisco",
+          startDate: "Mar 2015",
+          endDate: "Present",
+          isCurrent: true,
+          responsibilities:
+            "• Designed safety-focused experiences for Riders and Drivers\n• Physical space problem solving and it’s interaction with the digital\n• Navigated organization to achieve operational improvements\n",
+          technologies: []
+        },
+        {
+          id: 2,
+          title: "Product Designer",
+          company: "IFTTT",
+          city: "San Francisco",
+          startDate: "Dec 2013",
+          endDate: "Mar 2015",
+          isCurrent: false,
+          responsibilities:
+            "• Product and system design for a complex product\n• Designed both consumer and developer products for IFTTT\n• Responsible for maintaining design across iOS, Android, and web",
+          technologies: []
+        },
+        {
+          id: 3,
+          title: "Product Designer",
+          company: "Facebook",
+          city: "Menlo Park",
+          startDate: "Jun 2012",
+          endDate: "Dec 2013",
+          isCurrent: false,
+          responsibilities:
+            "• Designer and prototyped internal tools\n• Worked with Privacy team to build assets and features\n• Redesigned Newsfeed curation experience for mobile",
+          technologies: []
+        },
+        {
+          id: 4,
+          title: "UX/UI Design Intern",
+          company: "Google Maps",
+          city: "Mountain View",
+          startDate: "Sep 2012",
+          endDate: "Jun 2012",
+          isCurrent: false,
+          responsibilities:
+            "• Contributed to Maps on iOS wireframe ans user experience\n• Designed and prototyped onboarding experience\n• Asset and feature design for Maps on Android",
+          technologies: []
+        }
+      ]
+    },
+    education: {
+      count: 2,
+      title: "Education",
+      educations: [
+        {
+          id: 1,
+          name: "Rhode Island School of Design",
+          degree: "BFA",
+          startDate: "2009",
+          endDate: "",
+          city: "BFA Industrial Design, Class of 2013",
+          desc: ""
+        },
+        {
+          id: 2,
+          name: "Brown University",
+          degree: "",
+          startDate: "Sep 2010",
+          endDate: "May 2013",
+          city: "Interdisciplinary studies, Sep 2010 - May 2013",
+          desc: ""
+        }
+      ]
+    },
+    skills: {
+      title: "Skills",
+      ver2: {
+        technologies: [
+          {
+            id: 1,
+            name: "Figma",
+            percent: 100,
+            isWithPercent: false
+          },
+          {
+            id: 2,
+            name: "Sketch",
+            percent: 100,
+            isWithPercent: false
+          },
+          {
+            id: 3,
+            name: "Photoshop",
+            percent: 100,
+            isWithPercent: false
+          },
+          {
+            id: 4,
+            name: "Illustrator",
+            percent: 100,
+            isWithPercent: false
+          },
+          {
+            id: 5,
+            name: "Adobe XD",
+            percent: 100,
+            isWithPercent: false
+          },
+          {
+            id: 6,
+            name: "Principle",
+            percent: 100,
+            isWithPercent: false
+          }
+        ]
+      }
+    },
+    languages: {
+      title: "Languages",
+      count: 2,
+      languages: [
+        {
+          id: 1,
+          name: "English",
+          level: "C2"
+        },
+        {
+          id: 2,
+          name: "Italian",
+          level: "B2"
+        }
+      ]
+    }
+  };
   return (
 
     <BrowserRouter>
@@ -20,7 +196,10 @@ function App() {
         <Route path="/" element={<HomeLayout />}>
           <Route index={true} element={<HomePage />} />
           <Route path="/resume-templates" element={<ResumeTemplates />} />
-          <Route path="/profile" element={<Resume8 />} />
+          <Route path="/profile" element={<EnjiBlackResume />} />
+          <Route path="resume6" element={<Resume6 />} />
+          <Route path="/resume1" element={<Resume1 data={data} />} />
+
         </Route>
         <Route path="/resume-builder" element={<ResumeBuilder />} />
       </Routes>
